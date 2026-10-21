@@ -10,7 +10,7 @@ def crop(image, top ,left , height, width):
         raise ValueError("outside rectangular bond")
     result=[]
     for row in image[top:top+height]:
-        result.append(image[left:left+width])
+        result.append(row[left:left+width])
 
     return result
 def make_sample_image():
@@ -25,5 +25,5 @@ def make_sample_image():
 
 if __name__=="__main__":
     img=make_sample_image()
-    print_image(crop(img, 3 ,4 , 2, 4))
+    print_image(crop(img, 1,1, 3, 2))
     
