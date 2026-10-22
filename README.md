@@ -5,8 +5,7 @@
 This project is a small grayscale image processor that applies pixel-wise, geometric and neighborhood operations to an image. It uses pure Python only: no NumPy, OpenCV or Pillow. Every operation is written by hand with loops and lists.
 
 ## Requirements
-
-- Python <your version, e.g. 3.10.12> (check with `python3 --version`)
+Python 3.12.3
 - No external libraries (standard library only)
 
 ## How to Run
