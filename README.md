@@ -57,87 +57,114 @@ The height is `len(image)` and the width is `len(image[0])`.
 **How the original is protected:** all reads come from the input image, and all writes go to a separate result image. This means blurred values never feed back into later calculations, and the input is never modified.
 
 ## Sample Output
-   original
+## Sample Output
+
+All operations take a 5x5 grayscale image (values 0-255) and return a new image. The original is never modified.
+
+### Original
+```text
 255  10 220  50 110
  23 255   0  20 200
   0   0 255   0   0
   0  45   0 255   0
 100   0 195   0 255
+```
 
-inverted
+### Inverted
+```text
   0 245  35 205 145
 232   0 255 235  55
 255 255   0 255 255
 255 210 255   0 255
 155 255  60 255   0
+```
 
-brighter
+### Brighter (+120)
+```text
 255 130 255 170 230
 143 255 120 140 255
 120 120 255 120 120
 120 165 120 255 120
 220 120 255 120 255
+```
 
-darker
+### Darker (-120)
+```text
 135   0 100   0   0
   0 135   0   0  80
   0   0 135   0   0
   0   0   0 135   0
   0   0  75   0 135
+```
 
-threshold
+### Threshold
+```text
 255   0 255   0 255
   0 255   0   0 255
   0   0 255   0   0
   0   0   0 255   0
 255   0 255   0 255
+```
 
-flip vertical
+### Flip Vertical
+```text
 100   0 195   0 255
   0  45   0 255   0
   0   0 255   0   0
  23 255   0  20 200
 255  10 220  50 110
+```
 
-flip horizontal
+### Flip Horizontal
+```text
 110  50 220  10 255
 200  20   0 255  23
   0   0 255   0   0
   0 255   0  45   0
 255   0 195   0 100
+```
 
-rotate 90 cw
+### Rotate 90° Clockwise
+```text
 100   0   0  23 255
   0  45   0 255  10
 195   0 255   0 220
   0 255   0  20  50
 255   0   0 200 110
+```
 
-rotate 90 acw
+### Rotate 90° Anticlockwise
+```text
 110 200   0   0 255
  50  20   0 255   0
 220   0 255   0 195
  10 255   0  45   0
 255  23   0   0 100
+```
 
-crop
+### Crop (2x2, top=2, left=2)
+```text
 255   0
   0 255
+```
 
-box blur
+### Box Blur (3x3, average of valid neighbors at borders)
+```text
 136 127  92 100  95
  90 113  90  95  63
  54  64  92  81  79
  24  66  83 107  85
  36  57  82 118 128
+```
 
-original again
+### Original Again (unchanged)
+```text
 255  10 220  50 110
  23 255   0  20 200
   0   0 255   0   0
   0  45   0 255   0
-100   0 195   0 255 
-
+100   0 195   0 255
+```
 
 ## Aliasing and Copying
 
