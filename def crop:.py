@@ -7,12 +7,13 @@ def crop(image, top ,left , height, width):
     img_h=len(image)
     img_w=len(image[0])
     if top<0 or left<0 or top+height>img_h or left+width>img_w:
-        raise ValueError("outside rectangular bond")
+        raise ValueError("outside rectangular bound")
     result=[]
     for row in image[top:top+height]:
         result.append(row[left:left+width])
 
     return result
+
 def make_sample_image():
     return [
         [255,   10,   220,   50,  110],
